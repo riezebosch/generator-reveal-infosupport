@@ -43,20 +43,20 @@ module.exports = class RevealGenerator extends Generator
                         return 'Please enter a correct semver version, i.e. MAJOR.MINOR.PATCH.' unless semver.valid input
                         true
                 }
-                {
-                    name: 'useSass'
-                    message: 'Do you want to use Sass to create a custom theme?'
-                    type: 'confirm'
-                    default: @config.get 'useSass'
-                }
-                {
-                    name: 'revealTheme'
-                    type: 'list'
-                    message: 'What Reveal.js theme would you like to use?'
-                    when: (props) -> props.useSass is off
-                    choices: @fs.readJSON path.join __dirname, './theme_choices.json'
-                    default: @config.get 'revealTheme'
-                }
+#                 {
+#                     name: 'useSass'
+#                     message: 'Do you want to use Sass to create a custom theme?'
+#                     type: 'confirm'
+#                     default: @config.get 'useSass'
+#                 }
+#                 {
+#                     name: 'revealTheme'
+#                     type: 'list'
+#                     message: 'What Reveal.js theme would you like to use?'
+#                     when: (props) -> props.useSass is off
+#                     choices: @fs.readJSON path.join __dirname, './theme_choices.json'
+#                     default: @config.get 'revealTheme'
+#                 }
                 {
                     name: 'deployToGithubPages'
                     message: 'Do you want to deploy your presentation to Github Pages? This requires an empty Github repository.'

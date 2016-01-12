@@ -1,15 +1,13 @@
 {
-  "name": "generator-reveal",
-  "version": "1.0.0",
-  "description": "A Reveal.js generator for Yeoman",
+  "name": "generator-reveal-infosupport",
+  "version": "1.0.1",
+  "description": "A Reveal.js generator for Yeoman with the Info Support specific theme",
   "keywords": [
     "yeoman-generator",
-    "reveal.js",
-    "slides",
-    "presentation"
+    "infosupport"
   ],
-  "homepage": "https://github.com/slara/generator-reveal",
-  "bugs": "https://github.com/slara/generator-reveal/issues",
+  "homepage": "https://github.com/riezebosch/generator-reveal-infosupport",
+  "bugs": "https://github.com/riezebosch/generator-reveal-infosupport/issues",
   "author": {
     "name": "Sebastian Lara Menares",
     "email": "slaramen@gmail.com",
@@ -25,7 +23,7 @@
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/slara/generator-reveal.git"
+    "url": "https://github.com/riezebosch/generator-reveal-infosupport"
   },
   "scripts": {
     "test": "npm run coffeelint && istanbul test _mocha --report lcovonly -- ./test/*.coffee --require coffee-script/register --reporter spec --timeout 100000",

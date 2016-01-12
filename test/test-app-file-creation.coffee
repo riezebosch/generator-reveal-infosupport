@@ -71,8 +71,8 @@ describe 'Generator Reveal', ->
 
         it 'uses defaults for .yo-rc.json config', ->
             assert.fileContent '.yo-rc.json', '"deployToGithubPages": false'
-            assert.fileContent '.yo-rc.json', '"useSass": false'
-            assert.fileContent '.yo-rc.json', '"revealTheme": "black"'
+#             assert.fileContent '.yo-rc.json', '"useSass": false'
+#             assert.fileContent '.yo-rc.json', '"revealTheme": "black"'
             assert.fileContent '.yo-rc.json', '"presentationTitle": "Reveal.js and Yeoman is Awesomeness"'
             assert.fileContent '.yo-rc.json', 'packageVersion": "0.0.0"'
 
@@ -90,40 +90,40 @@ describe 'Generator Reveal', ->
             .withPrompts(
                 presentationTitle: 'ICanHazConfig'
                 packageVersion: '0.1.0'
-                revealTheme: 'simple'
-                useSass: false
+#                 revealTheme: 'simple'
+#                 useSass: false
                 deployToGithubPages: false
             )
             .on 'end', ->
-                assert.fileContent '.yo-rc.json', /"generator-reveal"/
-                assert.fileContent '.yo-rc.json', /"useSass": false/
-                assert.fileContent '.yo-rc.json', /"revealTheme": "simple"/
+                assert.fileContent '.yo-rc.json', /"generator-reveal-infosupport"/
+#                 assert.fileContent '.yo-rc.json', /"useSass": false/
+#                 assert.fileContent '.yo-rc.json', /"revealTheme": "simple"/
                 assert.fileContent '.yo-rc.json', /"presentationTitle": "ICanHazConfig"/
                 assert.fileContent '.yo-rc.json', /"packageVersion": "0.1.0"/
 
-    it 'generates SASS support for themes', ->
-        run_context
-            .withPrompts(
-                presentationTitle: 'SASS Support 4 Custom Themes'
-                packageVersion: '0.0.1'
-                revealTheme: 'default'
-                useSass: true
-                deployToGithubPages: false
-            )
-            .on 'end', ->
-                assert.fileContent 'css/source/theme.scss', /@import "..\/..\/bower_components\/reveal.js\/css\/theme\/template\/theme";/
-                assert.fileContent 'Gruntfile.coffee', /sass:/
-                assert.fileContent 'Gruntfile.coffee', /'css\/\*.css'/
-                assert.fileContent 'Gruntfile.coffee', /'css\/theme.css': 'css\/source\/theme.scss'/
-                assert.fileContent 'templates/_index.html', /<link rel="stylesheet" href="css\/theme.css" id="theme">/
-                assert.fileContent 'package.json', /"grunt-sass"/
+#    it 'generates SASS support for themes', ->
+#        run_context
+#            .withPrompts(
+#                presentationTitle: 'SASS Support 4 Custom Themes'
+#                packageVersion: '0.0.1'
+#                revealTheme: 'default'
+#                useSass: true
+#                deployToGithubPages: false
+#            )
+#            .on 'end', ->
+#                assert.fileContent 'css/source/theme.scss', /@import "..\/..\/bower_components\/reveal.js\/css\/theme\/template\/theme";/
+#                assert.fileContent 'Gruntfile.coffee', /sass:/
+#                assert.fileContent 'Gruntfile.coffee', /'css\/\*.css'/
+#                assert.fileContent 'Gruntfile.coffee', /'css\/theme.css': 'css\/source\/theme.scss'/
+#                assert.fileContent 'templates/_index.html', /<link rel="stylesheet" href="css\/theme.css" id="theme">/
+#                assert.fileContent 'package.json', /"grunt-sass"/
 
     it 'generates Build control configuration for Github Pages Deployment', ->
         run_context
             .withPrompts(
                 presentationTitle: 'Deploy to Github Pages'
                 packageVersion: '0.0.1'
-                useSass: false
+#                 useSass: false
                 deployToGithubPages: true
                 githubUsername: 'yeoman'
                 githubRepository: 'reveal-js'
@@ -136,14 +136,14 @@ describe 'Generator Reveal', ->
                 assert.fileContent '.yo-rc.json', /"githubUsername": "yeoman"/
                 assert.fileContent '.yo-rc.json', /"githubRepository": "reveal-js"/
 
-    it 'uses selected theme when not using sass', ->
-        run_context
-            .withPrompts(
-                presentationTitle: 'Deploy to Github Pages'
-                packageVersion: '0.0.1'
-                useSass: false
-                revealTheme: 'night'
-                deployToGithubPages: false
-            )
-            .on 'end', ->
-                assert.fileContent 'templates/_index.html', /<link rel="stylesheet" href="bower_components\/reveal.js\/css\/theme\/night.css" id="theme">/
+#    it 'uses selected theme when not using sass', ->
+#        run_context
+#            .withPrompts(
+#                presentationTitle: 'Deploy to Github Pages'
+#                packageVersion: '0.0.1'
+#                useSass: false
+#                revealTheme: 'night'
+#                deployToGithubPages: false
+#            )
+#            .on 'end', ->
+#                assert.fileContent 'templates/_index.html', /<link rel="stylesheet" href="bower_components\/reveal.js\/css\/theme\/night.css" id="theme">/
