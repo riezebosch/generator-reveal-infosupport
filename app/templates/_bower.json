@@ -1,9 +1,9 @@
 {
-  "name": "<%= slugify(config.get('presentationTitle')) %>",
-  "version": "<%= config.get('packageVersion') %>",
+  "name": "<%= slugify(config.get('courseTitle')) %>",
+  "version": "1.0.0",
   "dependencies": {
-    "reveal.js": "~3.4.1",
-    "highlightjs": "~9.9.0",
+    "reveal.js": "^3.4.1",
+    "highlightjs": "^9.9.0",
     "reveal.js-theme-infosupport": ">=0.0.4"
   }
 }

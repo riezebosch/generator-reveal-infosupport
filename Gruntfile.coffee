@@ -15,7 +15,7 @@ module.exports = (grunt) ->
         coffee:
             compile:
                 expand: true
-                src: ['app/index.coffee', 'slide/index.coffee']
+                src: ['app/index.coffee']
                 ext: '.js'
 
     grunt.registerTask 'test', 'Run `npm test`', ->

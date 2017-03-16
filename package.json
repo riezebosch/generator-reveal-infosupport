@@ -1,5 +1,5 @@
 {
-  "name": "generator-reveal-infosupport",
+  "name": "@infosupport/generator-kc",
   "version": "1.0.1",
   "description": "A Reveal.js generator for Yeoman with the Info Support specific theme",
   "keywords": [
@@ -28,7 +28,7 @@
   "scripts": {
     "test": "npm run coffeelint && istanbul test _mocha --report lcovonly -- ./test/*.coffee --require coffee-script/register --reporter spec --timeout 100000",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "coffeelint": "coffeelint app/index.coffee slide/index.coffee test Gruntfile.coffee",
+    "coffeelint": "coffeelint app/index.coffee test Gruntfile.coffee",
     "prepublish": "grunt coffee && npm test"
   },
   "dependencies": {

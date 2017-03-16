@@ -1,27 +1,19 @@
 {
   "name": "<%= slugify(config.get('presentationTitle')) %>",
-  "version": "<%= config.get('packageVersion') %>",
+  "version": "1.0.0",
   "private": true,
+  "dependencies": {  },
   "devDependencies": {
-    "grunt": "^1.0.0",<% if (config.get('useSass')) { %>
-    "grunt-sass": "^2.0.0",<% } %>
-    "grunt-contrib-connect": "^1.0.2",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-jshint": "^1.1.0",
-    "load-grunt-tasks": "^3.5.2", <% if (config.get('deployToGithubPages')) { %>
-    "grunt-build-control": "^0.7.1",<% } %>
-    "grunt-coffeelint": "0.0.16",
-    "coffeelint": "^1.16.0"
+    "directory-tree": "^1.2.0",
+    "gulp": "^3.9.1",
+    "gulp-batch": "^1.0.5",
+    "gulp-template": "^4.0.0",
+    "gulp-watch": "^4.3.11",
+    "gulp-webserver": "^0.9.1"
   },
   "engines": {
     "node": ">=4"
-  },<% if (config.get('deployToGithubPages')) { %>
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:<%= config.get('githubUsername') %>/<%= config.get('githubRepository')%>.git"
-
-  },<% } %>
+  },
   "scripts": {
     "test": "grunt test"
   }

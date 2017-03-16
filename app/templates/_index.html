@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
 
-        <title><%= capitalize(config.get('presentationTitle')) %></title>
+        <title>Developing Data Access Solutions</title>
 
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -12,12 +12,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
         <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
-    <% if (config.get('useSass')) { %>
-        <link rel="stylesheet" href="css/theme.css" id="theme">
-    <% } else { %>
+    
         <link rel="stylesheet" href="bower_components/reveal.js-theme-infosupport/infosupport.css" id="theme">
-    <% } %>
-
+    
         <!-- For syntax highlighting -->
         <link rel="stylesheet" href="bower_components/highlightjs/styles/vs.css">
 
@@ -36,25 +33,23 @@
     </head>
 
     <body>
-
         <div class="reveal">
-
-            <div class="slides">
-
-                <%% _.forEach(slides, function(slide) { %>
-                    <%% if (!_.isArray(slide)) { %>
-                        <%%= section(slide) %>
-                    <%% } %>
-                    <%% if (_.isArray(slide)) { %>
-                        <section>
-                            <%% _.forEach(slide, function(verticalslide) { %>
-                                <%%= section(verticalslide) %>
-                            <%% }); %>
-                        </section>
-                    <%% } %>
-                <%% }); %>
+            <div class="slides"><%%
+            _.forEach(data.children, function(item) {
+                if (item.children) { %>
+                <section><%%
+                    _.forEach(item.children, function(child) { %>
+                    <section data-markdown="<%%= child.path %>"></section><%%
+                    }) %>
+            </section><%%
+                } else { %>
+            <section data-markdown="<%%= item.path %>" 
+                        data-separator="^---"  
+                        data-separator-vertical="^--"  
+                        data-separator-notes="^Note:"></section><%%
+                } 
+            }) %>
             </div>
-
         </div>
 
         <script src="bower_components/reveal.js/lib/js/head.min.js"></script>
@@ -85,5 +80,4 @@
 
         </script>
     </body>
-
 </html>
