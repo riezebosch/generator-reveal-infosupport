@@ -48,7 +48,7 @@ describe 'Generator Reveal', ->
             expected = [
                 'gulpfile.js'
                 'templates/index.html'
-                'slides/index.md'
+                'slides/00-title.md'
                 'bower.json'
                 'js/loadhtmlslides.js'
                 'package.json'

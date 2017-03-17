@@ -1,6 +1,6 @@
 {
   "name": "@infosupport/generator-kc",
-  "version": "1.0.1",
+  "version": "0.0.2",
   "description": "A Reveal.js generator for Yeoman with the Info Support specific theme",
   "keywords": [
     "yeoman-generator",
@@ -18,12 +18,17 @@
       "name": "Jan Raasch",
       "email": "jan@janraasch.com",
       "url": "http://janraasch.com"
+    },
+     {
+      "name": "Manuel Riezebosch",
+      "email": "mriezebosch@gmail.com",
+      "url": "https://github.com/riezebosch"
     }
   ],
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/riezebosch/generator-reveal-infosupport"
+    "url": "https://github.com/riezebosch/generator-kc"
   },
   "scripts": {
     "test": "npm run coffeelint && istanbul test _mocha --report lcovonly -- ./test/*.coffee --require coffee-script/register --reporter spec --timeout 100000",

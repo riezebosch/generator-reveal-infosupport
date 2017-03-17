@@ -19,11 +19,6 @@ module.exports = class RevealGenerator extends Generator
 
     prompting:
         askFor: ->
-            # Have Yeoman greet the user.
-            @log chalk.magenta(
-                'This includes the amazing Reveal.js Framework\n' +
-                'and a Gruntfile for your presentation pleasure.\n'
-            )
             prompts = [
                 {
                     name: 'courseTitle'
@@ -43,7 +38,8 @@ module.exports = class RevealGenerator extends Generator
 
     writing:
         app: ->
-            @fs.copyTpl @templatePath('_index.md'), @destinationPath('slides/index.md'), @
+            @fs.copyTpl @templatePath('_!help.md'), @destinationPath('slides/!help.md'), @
+            @fs.copyTpl @templatePath('_00-title.md'), @destinationPath('slides/00-title.md'), @
             @fs.copyTpl @templatePath('gulpfile.js'), @destinationPath('gulpfile.js'), @
 
             @fs.copyTpl @templatePath('_package.json'), @destinationPath('package.json'), {slugify: slugify, config: @config}

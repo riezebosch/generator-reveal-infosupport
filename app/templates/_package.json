@@ -1,9 +1,10 @@
 {
-  "name": "<%= slugify(config.get('presentationTitle')) %>",
+  "name": "<%= slugify(config.get('courseTitle')) %>",
   "version": "1.0.0",
   "private": true,
   "dependencies": {  },
   "devDependencies": {
+    "cross-spawn": "^5.1.0",
     "directory-tree": "^1.2.0",
     "gulp": "^3.9.1",
     "gulp-batch": "^1.0.5",

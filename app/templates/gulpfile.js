@@ -1,12 +1,12 @@
 var gulp = require('gulp');
-var spawn = require('child_process').spawn
+var spawn = require('cross-spawn')
 var template = require('gulp-template')
 var dirTree = require('directory-tree')
 var watch = require('gulp-watch')
 var batch = require('gulp-batch')
 var server = require('gulp-webserver');
 
-gulp.task('serve', ['watch'], function() {
+gulp.task('serve', ['build', 'watch'], function() {
   gulp.src('.')
     .pipe(server({
       livereload: true,
