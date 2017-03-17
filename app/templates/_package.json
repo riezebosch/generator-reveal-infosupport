@@ -10,12 +10,14 @@
     "gulp-batch": "^1.0.5",
     "gulp-template": "^4.0.0",
     "gulp-watch": "^4.3.11",
-    "gulp-webserver": "^0.9.1"
+    "gulp-connect": "^5.0.0",
+    "opn": "^4.0.2",
+    "portastic": "1.0.1"
   },
   "engines": {
     "node": ">=4"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": ""
   }
 }
