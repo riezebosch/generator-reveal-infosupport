@@ -1,6 +1,6 @@
 {
   "name": "@infosupport/generator-kc",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A Reveal.js generator for Yeoman with the Info Support specific theme",
   "keywords": [
     "yeoman-generator",
